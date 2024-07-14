@@ -1,0 +1,57 @@
+.product-list-container {
+    padding: 20px;
+  }
+  
+  .add-product-button {
+    float: right;
+    
+    background-color: #007bff;
+   
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+    cursor: pointer;
+  }
+  
+  .filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .product-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .product-item-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-button, .delete-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+  }
+  
