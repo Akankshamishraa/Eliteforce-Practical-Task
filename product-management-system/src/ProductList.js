@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import Modal from './Modal';
 import './ProductList.css';
 
 const ProductList = () => {
@@ -82,7 +82,10 @@ const ProductList = () => {
           </div>
       </li>
       ))}
-    </ul>
+    </ul><Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onConfirm={confirmDelete} />
     </div></>
   );
 };
