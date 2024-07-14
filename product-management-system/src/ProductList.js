@@ -77,7 +77,7 @@ const ProductList = () => {
           <li key={product.id} className="product-item">
             <span>{product.name}</span> - ${product.price}
             <div className="product-item-buttons">
-              <Link to={`/edit/$} {...product.id}`} className="edit-button">Edit</Link>
+              <Link to={`/edit/${product.id}`} className="edit-button">Edit</Link>
             <button onClick={() => handleDelete(product.id)} className="delete-button">Delete</button>
           </div>
       </li>
