@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './EditProduct.css'; 
+import './EditProduct.css';
+
 const AddProduct = () => {
-  const [product, setProduct] = useState({ id: Date.now(), name: '', description: '', price: '', category: '' });
   const navigate = useNavigate();
+  const [product, setProduct] = useState({
+    name: '',
+    description: '',
+    price: '',
+    category: ''
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,9 +21,27 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+   
+    if (!product.name || !product.description || !product.price || !product.category) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    
+    if (isNaN(parseFloat(product.price))) {
+      alert('Price must be a valid number');
+      return;
+    }
+
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    storedProducts.push(product);
+    const newProduct = {
+      id: Date.now(),
+      ...product
+    };
+    storedProducts.push(newProduct);
     localStorage.setItem('products', JSON.stringify(storedProducts));
+
+    
     navigate('/');
   };
 
